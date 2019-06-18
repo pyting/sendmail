@@ -1,9 +1,8 @@
 ```go
-package mail
+package main
 
 import (
 	"fmt"
-	"testing"
 	"github.com/pyting/sendmail"
 	"time"
 )
@@ -16,7 +15,7 @@ type Date struct {
 	SubUserName string  // 火币子帐号名称
 }
 
-func TestNewSender(t *testing.T) {
+func main() {
 
 	// 每日基金购入汇总模板
 	t1 := `
