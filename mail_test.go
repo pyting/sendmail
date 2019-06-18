@@ -1,10 +1,8 @@
-```go
 package mail
 
 import (
 	"fmt"
 	"testing"
-	"github.com/pyting/sendmail"
 	"time"
 )
 
@@ -32,11 +30,11 @@ func TestNewSender(t *testing.T) {
 </table>
 `
 
-	sender := mail.NewSender("smtp.163.com", "youlink_yi", "Yml4dWFuCg", 465)
+	sender := NewSender("smtp.163.com", "youlink_yi", "Yml4dWFuCg", 465)
 
-	from := mail.User{"Bixuan", "youlink_yi@163.com"}
-	to := []mail.User{{"胡一晟", "2312493805@qq.com"}}
-	cc := []mail.User{{"张一斌", "382431937@qq.com"}}
+	from := User{"Bixuan", "youlink_yi@163.com"}
+	to := []User{{"胡一晟", "2312493805@qq.com"}}
+	cc := []User{{"张一斌", "382431937@qq.com"}}
 
 	data := []Date{
 		{"币种多样，收益稳健", "胡伟", 19874.3454, "102528316", "tumen003"},
@@ -53,7 +51,7 @@ func TestNewSender(t *testing.T) {
 		{"币种多样，收益稳健", "胡伟", 19874.3454, "102528316", "tumen003"},
 	}
 
-	m := mail.Message{
+	m := Message{
 		From:           from,
 		To:             to,
 		Cc:             cc,
@@ -75,5 +73,3 @@ func TestNewSender(t *testing.T) {
 
 	sender.Stop()
 }
-
-```
